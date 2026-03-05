@@ -9,6 +9,9 @@
 #include <time.h>
 #include <string.h>
 
+#define BLUE "\033[34m"
+#define RESET "\033[0m"
+
 char playerName(*name)
 {
   while strlen(name) > 15 
@@ -42,8 +45,10 @@ int main()
   int potatoSeeds;
   int hoe; 
   int shovel; 
-  int waterCan; 
-  
+  int waterCan;
+  char elixir;
+
+  // NAME 
   printf("Welcome to ______ \n");
   printf("Enter your name (Maximum of 15 characters): \n");
   scanf("%s", name); 
@@ -66,6 +71,20 @@ int main()
   printf("Water Can +1! \nShovel +1! \nHoe +1! \n"); 
   printf("These tools aren't going to stay forever, they will eventually break.\n");
   printf("When they do you'll have the option to go into town and buy new ones from the merchant or take it to the blacksmith. \n");
+
+  // Uses for the tools 
+  shovel = 25; 
+  hoe = 25; 
+  waterCan =25; 
+  
+  printf("Oh? You stepped on something...? \n"); 
+  printf("You pick up a strange bottle, it has a strange label on it...? \n");
+  printf(BLUE);
+  printf("Meow \n");
+  printf(RESET);
+  printf("..? \n");
+  printf("Do you decide to drink the elixir? (y for yes n for no): \n");
+  scanf("%c", elixir); 
   
   
   
