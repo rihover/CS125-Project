@@ -60,7 +60,9 @@ int main()
   
   // TUTORIAL AND START OF GAME
   printf("Welcome to %s! Here is a look at your farm! \n", farm);
-  // Open the txt file here.
+  FILE* f= fopen("FARM.txt", "r");
+  // Call FARM.c here for reading 
+  fclose(f);
   printf("Today is your first day of owning a farm! I bet it feels good, lets start with the basics! \n"); 
   printf("To you started off let's get you some seeds. \n"); 
   printf("Wildflower seeds +1! \n");
@@ -85,7 +87,12 @@ int main()
   printf("..? \n");
   printf("Do you decide to drink the elixir? (y for yes n for no): \n");
   scanf("%c", elixir); 
-  
+   while elixir != 'y' && elixir != 'n' { 
+    printf("Incorrect input try again! \n");
+    printf("Do you decide to drink the elixir? (y for yes n for no): \n");
+    scanf("%c", &elixir);
+    }
+  printf("You open up the bottle to
   
   
   
