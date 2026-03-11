@@ -7,7 +7,7 @@
 
 #include<stdio.h>
 
-int main()
+int farmart()
 {
 char farm_house[400];
 int i;
