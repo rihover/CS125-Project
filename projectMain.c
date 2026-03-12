@@ -103,7 +103,18 @@ int main()
     printf("Do you decide to drink the elixir? (y for yes n for no): \n");
     scanf("%c", &elixir);
   }
-  printf("You open up the bottle to check it and suddenly \n");
+  printf("You open up the bottle to check it and suddenly... A CAT?! \n");
+  printf("The bottle hits your mouth and you're forced to drink the elixir! \n");
+  
+  // Open txt file for cat here 
+  printf(BLUE); 
+  printf("Hello I am Milo! Welcome to the world of cats! \n"); 
+  printf(RESET); 
+  printf("The elixir must have given you the ability to hear cats talk?! \n");
+  printf(BLUE); 
+  printf("You must be quite surprised, I am a cat, WHO TALKS! \n"); 
+  printf("Well that's what the elixir did to ya! \n"); 
+  printf("Anywho, let's get this farm started! \n");
   
 return 0;
 } 
