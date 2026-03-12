@@ -11,7 +11,7 @@ int farmart()
 {
 char farm_house[400];
 int i;
-FILE* f=fopen("FARM.txt","r");
+FILE* f=fopen("farm_art.txt","r");
 for (i=0; i<=7; i++)
 {
 fgets(farm_house, 400, f);
