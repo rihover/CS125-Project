@@ -2,7 +2,9 @@
  * Authors: Rihanna Overbaugh and Elizabeth Huffman
  * File: projectMain.c
  * Version: 1.0 3/4/26 (created main)
-            1.1 3/5/26 (added naming functions and tutorial) 
+            1.1 3/5/26 (added naming functions and tutorial)
+            1.2 3/11/26 (added error handling for elixir choice) 
+            1.3 3/12/26 (getting farm ascii to print, and debugging)  
 ****************************************************/
 #include <stdio.h> 
 #include <stdlib.h> 
@@ -12,32 +14,37 @@
 #define BLUE "\033[34m"
 #define RESET "\033[0m"
 
-char playerName(*name)
+char name[15];
+char farm[20];
+
+void farmart();
+
+char playerName(char name[])
 {
-  while strlen(name) > 15 
+  while (strlen(name) > 15) 
     { 
       printf("Too many characters try again! \n");
       printf("Enter your name (Maximum of 15 characters): \n");
       scanf("%s", name);
     }
+  return name[15];
 }
 
-char farmName(*farm)
+char farmName(char farm[])
 {
-  while strlen(farm) > 20 
+  while (strlen(farm) > 20)
     {
       printf("Too many characters try again! \n");
-      printf("Enter your name (Maximum of 15 characters): \n");
-      scanf("%s", name);
+      printf("Enter your farm name (Maximum of 20 characters): \n");
+      scanf("%s", farm);
     }
+  return farm[20];
 }
 
 
 
 int main()
 {
-  char *name[15];
-  char *farm[20];
   int tomatoSeeds;
   int wildFlowerSeeds;
   int radishSeeds; 
@@ -45,24 +52,27 @@ int main()
   int potatoSeeds;
   int hoe; 
   int shovel; 
-  int waterCan;
+  int waterCan; 
   char elixir;
-
-  // NAME 
+  
+  
+  // NAME
   printf("Welcome to ______ \n");
   printf("Enter your name (Maximum of 15 characters): \n");
   scanf("%s", name); 
-  playerName() // Have to fix how the function and where it is called.
+  name[15] = playerName(name); // Have to fix how the function and where it is called.
   
   printf("Enter a farm name (Maximum of 20 characters): \n");
   scanf("%s", farm); 
-  farmName() // HAve to fix where it is called
+  farm[20] = farmName(farm); // HAve to fix where it is called
   
   // TUTORIAL AND START OF GAME
   printf("Welcome to %s! Here is a look at your farm! \n", farm);
-  FILE* f= fopen("FARM.txt", "r");
-  // Call FARM.c here for reading 
-  fclose(f);
+  printf(" \n \n \n");
+
+  //farmart();
+  
+  printf("\n \n \n");
   printf("Today is your first day of owning a farm! I bet it feels good, lets start with the basics! \n"); 
   printf("To you started off let's get you some seeds. \n"); 
   printf("Wildflower seeds +1! \n");
@@ -73,7 +83,7 @@ int main()
   printf("Water Can +1! \nShovel +1! \nHoe +1! \n"); 
   printf("These tools aren't going to stay forever, they will eventually break.\n");
   printf("When they do you'll have the option to go into town and buy new ones from the merchant or take it to the blacksmith. \n");
-
+  
   // Uses for the tools 
   shovel = 25; 
   hoe = 25; 
@@ -86,14 +96,15 @@ int main()
   printf(RESET);
   printf("..? \n");
   printf("Do you decide to drink the elixir? (y for yes n for no): \n");
-  scanf("%c", elixir); 
-   while elixir != 'y' && elixir != 'n' { 
+  scanf("%c", &elixir); 
+  
+  while (elixir != 'y' && elixir != 'n') { 
     printf("Incorrect input try again! \n");
     printf("Do you decide to drink the elixir? (y for yes n for no): \n");
     scanf("%c", &elixir);
-    }
-  printf("You open up the bottle to
+  }
+  printf("You open up the bottle to check it and suddenly \n");
   
-  
-  
+return 0;
+} 
   
