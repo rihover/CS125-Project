@@ -5,6 +5,7 @@
             1.1 3/5/26 (added naming functions and tutorial)
             1.2 3/11/26 (added error handling for elixir choice) 
             1.3 3/12/26 (getting farm ascii to print, and debugging)  
+            1.4 3/24/26 (Added plant seeds function) 
 ****************************************************/
 #include <stdio.h> 
 #include <stdlib.h> 
@@ -13,11 +14,15 @@
 
 #define BLUE "\033[34m"
 #define RESET "\033[0m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
 
 char name[15];
 char farm[20];
 
 void farmart();
+void plantSeeds();
+
 
 char playerName(char name[])
 {
@@ -50,6 +55,7 @@ int main()
   int radishSeeds; 
   int sugarCaneSeeds; 
   int potatoSeeds;
+  int tools[3]; 
   int hoe; 
   int shovel; 
   int waterCan; 
@@ -57,14 +63,14 @@ int main()
   
   
   // NAME
-  printf("Welcome to ______ \n");
+  printf("Welcome to The World of Cats! \n");
   printf("Enter your name (Maximum of 15 characters): \n");
   scanf("%s", name); 
-  name[15] = playerName(name); // Have to fix how the function and where it is called.
+  name[15] = playerName(name); 
   
   printf("Enter a farm name (Maximum of 20 characters): \n");
   scanf("%s", farm); 
-  farm[20] = farmName(farm); // HAve to fix where it is called
+  farm[20] = farmName(farm); 
   
   // TUTORIAL AND START OF GAME
   printf("Welcome to %s! Here is a look at your farm! \n", farm);
@@ -82,19 +88,20 @@ int main()
   printf("Here are some basic tools to start your farm! \n");
   printf("Water Can +1! \nShovel +1! \nHoe +1! \n"); 
   printf("These tools aren't going to stay forever, they will eventually break.\n");
-  printf("When they do you'll have the option to go into town and buy new ones from the merchant or take it to the blacksmith. \n");
+  printf("When they do you'll have the option to go into town and buy new ones from the merchant or take it to the blacksmith. \n \n \n");
   
   // Uses for the tools 
   shovel = 25; 
   hoe = 25; 
   waterCan =25; 
+  tools = [25 25 25];
   
   printf("Oh? You stepped on something...? \n"); 
   printf("You pick up a strange bottle, it has a strange label on it...? \n");
   printf(BLUE);
-  printf("Meow \n");
+  printf("Meow \n \n");
   printf(RESET);
-  printf("..? \n");
+  printf("..? \n \n");
   printf("Do you decide to drink the elixir? (y for yes n for no): \n");
   scanf("%c", &elixir); 
   
@@ -114,8 +121,18 @@ int main()
   printf(BLUE); 
   printf("You must be quite surprised, I am a cat, WHO TALKS! \n"); 
   printf("Well that's what the elixir did to ya! \n"); 
-  printf("Anywho, let's get this farm started! \n");
+  printf("Anywho, let's get this farm started! \n"); 
+  printf("Let's try planting the seeds we currently have! \n");
+  printf(RESET); 
+  // plantSeeds();
   
+  printf(BLUE) 
+  printf("We sucessfully got seeds planted! Let's make our way into town to meet some new frieds! \n"); 
+  printf("
+  
+  
+  
+  
+    
 return 0;
 } 
-  
