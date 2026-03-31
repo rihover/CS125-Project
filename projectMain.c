@@ -6,6 +6,7 @@
             1.2 3/11/26 (added error handling for elixir choice) 
             1.3 3/12/26 (getting farm ascii to print, and debugging)  
             1.4 3/24/26 (Added plant seeds function) 
+            1.5 3/31/26 ()
 ****************************************************/
 #include <stdio.h> 
 #include <stdlib.h> 
@@ -20,9 +21,21 @@
 char name[15];
 char farm[20];
 
-void farmart();
+
 void plantSeeds();
 
+int farmart()
+{
+  char farm_house[400];
+  int i;
+  FILE* f=fopen("farm_art.txt","r");
+  for (i=0; i<=7; i++)
+  {
+    fgets(farm_house, 400, f);
+    printf("%s", farm_house);
+  }
+  return 0;
+}
 
 char playerName(char name[])
 {
@@ -55,7 +68,6 @@ int main()
   int radishSeeds; 
   int sugarCaneSeeds; 
   int potatoSeeds;
-  int tools[3]; 
   int hoe; 
   int shovel; 
   int waterCan; 
@@ -76,7 +88,8 @@ int main()
   printf("Welcome to %s! Here is a look at your farm! \n", farm);
   printf(" \n \n \n");
 
-  //farmart();
+  farmart();
+ 
   
   printf("\n \n \n");
   printf("Today is your first day of owning a farm! I bet it feels good, lets start with the basics! \n"); 
@@ -94,7 +107,6 @@ int main()
   shovel = 25; 
   hoe = 25; 
   waterCan =25; 
-  tools = [25 25 25];
   
   printf("Oh? You stepped on something...? \n"); 
   printf("You pick up a strange bottle, it has a strange label on it...? \n");
@@ -126,13 +138,8 @@ int main()
   printf(RESET); 
   // plantSeeds();
   
-  printf(BLUE) 
+  printf(BLUE); 
   printf("We sucessfully got seeds planted! Let's make our way into town to meet some new frieds! \n"); 
-  printf("
   
-  
-  
-  
-    
-return 0;
-} 
+  return 0;
+}
