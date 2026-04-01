@@ -6,7 +6,8 @@
             1.2 3/11/26 (added error handling for elixir choice) 
             1.3 3/12/26 (getting farm ascii to print, and debugging)  
             1.4 3/24/26 (Added plant seeds function) 
-            1.5 3/31/26 ()
+            1.5 3/31/26 (Farm Ascii prints)
+            1.6 4/1/26 (wildflower ascii and milo ascii)
 ****************************************************/
 #include <stdio.h> 
 #include <stdlib.h> 
@@ -26,13 +27,39 @@ void plantSeeds();
 
 int farmart()
 {
-  char farm_house[400];
+char farm_house[400];
+int i;
+FILE* f=fopen("farm_art.txt","r");
+for (i=0; i<=7; i++)
+{
+fgets(farm_house, 400, f);
+printf("%s", farm_house);
+}
+return 0;
+}
+
+int wildFlowerart() 
+{
+  char flowerSeeds[400];
   int i;
-  FILE* f=fopen("farm_art.txt","r");
-  for (i=0; i<=7; i++)
+  FILE* f=fopen("flower_art.txt", "r");
+  for(i=0; i<=14; i++)
   {
-    fgets(farm_house, 400, f);
-    printf("%s", farm_house);
+    fgets(flowerSeeds, 400, f);
+    printf("%s", flowerSeeds);
+  }
+  return 0;
+}
+
+int miloart()
+{
+  char milo[400];
+  int i;
+  FILE* f=fopen("milo.txt","r");
+  for(i=0; i<=5; i++)
+  {
+    fgets(milo, 400, f);
+    printf("%s", milo);
   }
   return 0;
 }
@@ -58,8 +85,6 @@ char farmName(char farm[])
     }
   return farm[20];
 }
-
-
 
 int main()
 {
@@ -95,7 +120,10 @@ int main()
   printf("Today is your first day of owning a farm! I bet it feels good, lets start with the basics! \n"); 
   printf("To you started off let's get you some seeds. \n"); 
   printf("Wildflower seeds +1! \n");
-  // Open the txt wildflower file here for ascii art. 
+  printf("\n \n \n");
+  
+  wildFlowerart();
+  printf("\n \n \n");
   wildFlowerSeeds = 1; 
   printf("Everytime you enter your farm you will have the option to plant your seeds! \n"); 
   printf("Here are some basic tools to start your farm! \n");
@@ -124,8 +152,11 @@ int main()
   }
   printf("You open up the bottle to check it and suddenly... A CAT?! \n");
   printf("The bottle hits your mouth and you're forced to drink the elixir! \n");
+  printf(" \n \n \n");
   
-  // Open txt file for cat here 
+  miloart();
+  
+  printf("\n \n \n");
   printf(BLUE); 
   printf("Hello I am Milo! Welcome to the world of cats! \n"); 
   printf(RESET); 
