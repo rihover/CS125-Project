@@ -4,14 +4,16 @@
  * Version: 1.0 3/5/26 
             1.1 3/12/26
             1.2 3/24/26
+            1.3 4/2/26
 *****************************************************/
-#include <stdio.h> 
+#include <stdio.h>
+#include "plantSeeds.h"
 
 char plant;
 
 int plantSeed_error(char plant)
 { 
-  while (plant =! 'n') && (plant =! 'y') 
+  while ((plant =! 'n') && (plant =! 'y')) 
   { 
     printf("Let's try again, would you like to plant? y or n: \n");
     scanf("%c", &plant);
@@ -19,7 +21,7 @@ int plantSeed_error(char plant)
   return plant;
  }  
 
-int main() 
+int plantSeeds(int tomatoSeeds, int wildFlowerSeeds, int radishSeeds, int sugarCaneSeeds, int potatoSeeds) 
 {
   int tomato, wildFlower, radish, sugarCane, potato; 
   
@@ -27,7 +29,7 @@ int main()
   {
     printf("Would you like to plant tomatoes? y or n: \n");
     scanf("%c", &plant);
-    plant = plantSeeds_error(plant);
+    plant = plantSeed_error(plant);
     if (plant == 'y') 
     {
       printf("Tomato seeds planted! \n"); 
@@ -42,7 +44,7 @@ int main()
   {
     printf("Would you like to plant Wild Flowers? y or n: \n");
     scanf("%c", &plant);
-    plant = plantSeeds_error(plant);
+    plant = plantSeed_error(plant);
     if (plant == 'y') 
     {
       printf("Wild Flower seeds planted! \n"); 
@@ -57,7 +59,7 @@ int main()
   {
     printf("Would you like to plant radishes? y or n: \n");
     scanf("%c", &plant);
-    plant = plantSeeds_error(plant);
+    plant = plantSeed_error(plant);
     if (plant == 'y') 
     {
       printf("Radish seeds planted! \n"); 
@@ -72,7 +74,7 @@ int main()
   {
     printf("Would you like to plant Sugar Cane? y or n: \n");
     scanf("%c", &plant);
-    plant = plantSeeds_error(plant);
+    plant = plantSeed_error(plant);
     if (plant == 'y') 
     {
       printf("Sugar Cane seeds planted! \n"); 
@@ -87,7 +89,7 @@ int main()
   { 
     printf("Would you like to plant Potatoes? y or n: \n");
     scanf("%c", &plant);
-    plant = plantSeeds_error(plant);
+    plant = plantSeed_error(plant);
     if (plant == 'y') 
     {
       printf("Potato seeds planted! \n"); 
@@ -98,5 +100,5 @@ int main()
       printf("Potato seeds not planted! \n");
     }
   }
-  return 0; 
+  return tomato,potato,wildFlower,sugarCane,radish; 
 }
