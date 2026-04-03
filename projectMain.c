@@ -13,6 +13,7 @@
 #include <stdlib.h> 
 #include <time.h>
 #include <string.h>
+#include "plantSeeds.h"
 
 #define BLUE "\033[34m"
 #define RESET "\033[0m"
@@ -22,8 +23,6 @@
 char name[15];
 char farm[20];
 
-
-void plantSeeds();
 
 int farmart()
 {
@@ -93,6 +92,11 @@ int main()
   int radishSeeds; 
   int sugarCaneSeeds; 
   int potatoSeeds;
+  int potato = 0;
+  int wildflower = 0;
+  int tomato = 0;
+  int radish = 0;
+  int sugarCane = 0;
   int hoe; 
   int shovel; 
   int waterCan; 
@@ -143,12 +147,12 @@ int main()
   printf(RESET);
   printf("..? \n \n");
   printf("Do you decide to drink the elixir? (y for yes n for no): \n");
-  scanf("%c", &elixir); 
+  scanf(" %c", &elixir); 
   
   while (elixir != 'y' && elixir != 'n') { 
     printf("Incorrect input try again! \n");
     printf("Do you decide to drink the elixir? (y for yes n for no): \n");
-    scanf("%c", &elixir);
+    scanf(" %c", &elixir);
   }
   printf("You open up the bottle to check it and suddenly... A CAT?! \n");
   printf("The bottle hits your mouth and you're forced to drink the elixir! \n");
@@ -167,7 +171,8 @@ int main()
   printf("Anywho, let's get this farm started! \n"); 
   printf("Let's try planting the seeds we currently have! \n");
   printf(RESET); 
-  // plantSeeds();
+  
+  plantSeeds(tomatoSeeds,wildFlowerSeeds,sugarCaneSeeds,radishSeeds,potatoSeeds);
   
   printf(BLUE); 
   printf("We sucessfully got seeds planted! Let's make our way into town to meet some new frieds! \n"); 
