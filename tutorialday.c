@@ -1,4 +1,4 @@
-/****************************************************
+\/****************************************************
  * Authors: Rihanna Overbaugh and Elizabeth Huffman
  * File: projectMain.c
  * Version: 1.0 3/4/26 (created main)
@@ -64,6 +64,19 @@ int miloart()
   return 0;
 }
 
+int flowers_art()
+{
+    char flowers[400];
+    int i;
+    FILE* f=fopen("flowers.txt","r");
+    for(i=0; i<=7; i++)
+    {
+        fgets(flowers, 400, f);
+        printf("%s", flowers);
+    }
+    return 0;
+}
+    
 char playerName(char name[])
 {
   while (strlen(name) > 15) 
@@ -102,7 +115,7 @@ int main()
   int shovel; 
   int waterCan; 
   char elixir;
-  
+  char harvest_flower;
   
   // NAME
   printf("Welcome to The World of Cats! \n");
@@ -133,6 +146,13 @@ int main()
   printf("Everytime you enter your farm you will have the option to plant your seeds! \n"); 
   printf("Here are some basic tools to start your farm! \n");
   printf("Water Can +1! \nShovel +1! \nHoe +1! \n"); 
+  printf("These tools aren't going to stay forever, they will eventually break.\n");
+  printf("When they do you'll have the option to go into town and buy new ones from the merchant or take it to the blacksmith. \n \n \n");
+  
+  // Uses for the tools 
+  shovel = 25; 
+  hoe = 25; 
+  waterCan =25; 
   
   printf("Oh? You stepped on something...? \n"); 
   printf("You pick up a strange bottle, it has a strange label on it...? \n");
@@ -170,7 +190,21 @@ int main()
   
   printf(BLUE); 
   printf("We sucessfully got seeds planted! Now let's harvest the Wild Flowers! \n"); 
-  printf("")
+  printf(RESET);
+  printf("Would you like to harvest the Wild Flowers?('y' for yes, you have no other option): \n");
+  scanf(" %c", &harvest_flower);
   
+  while (harvest_flower != 'y')
+  {
+      printf("Incorrect input! Let's try again! \n");
+      printf("Would you like to harvest the Wild Flowers? (Type 'y') \n");
+      scanf(" %c", &harvest_flower);
+  }
+  printf("Wild Flowers harvested!");
+  printf("\n \n \n");
+  
+  flowers_art();
+  
+  printf("\n \n \n");
   return 0;
 }
