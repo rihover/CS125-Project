@@ -87,11 +87,11 @@ char farmName(char farm[])
 
 int main()
 {
-  int tomatoSeeds;
-  int wildFlowerSeeds;
-  int radishSeeds; 
-  int sugarCaneSeeds; 
-  int potatoSeeds;
+  int tomatoSeeds = 0;
+  int wildFlowerSeeds = 0;
+  int radishSeeds = 0; 
+  int sugarCaneSeeds = 0; 
+  int potatoSeeds =0;
   int potato = 0;
   int wildflower = 0;
   int tomato = 0;
@@ -117,7 +117,7 @@ int main()
   printf("Welcome to %s! Here is a look at your farm! \n", farm);
   printf(" \n \n \n");
 
-  farmart();
+  //farmart();
  
   
   printf("\n \n \n");
@@ -126,7 +126,7 @@ int main()
   printf("Wildflower seeds +1! \n");
   printf("\n \n \n");
   
-  wildFlowerart();
+  //wildFlowerart();
   printf("\n \n \n");
   wildFlowerSeeds = 1; 
   printf("Everytime you enter your farm you will have the option to plant your seeds! \n"); 
@@ -158,7 +158,7 @@ int main()
   printf("The bottle hits your mouth and you're forced to drink the elixir! \n");
   printf(" \n \n \n");
   
-  miloart();
+  //miloart();
   
   printf("\n \n \n");
   printf(BLUE); 
@@ -172,7 +172,7 @@ int main()
   printf("Let's try planting the seeds we currently have! \n");
   printf(RESET); 
   
-  plantSeeds(tomatoSeeds,wildFlowerSeeds,sugarCaneSeeds,radishSeeds,potatoSeeds);
+  plantSeeds(&tomatoSeeds,&wildFlowerSeeds,&sugarCaneSeeds,&radishSeeds,&potatoSeeds);
   
   printf(BLUE); 
   printf("We sucessfully got seeds planted! Let's make our way into town to meet some new frieds! \n"); 
