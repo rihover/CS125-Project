@@ -133,13 +133,6 @@ int main()
   printf("Everytime you enter your farm you will have the option to plant your seeds! \n"); 
   printf("Here are some basic tools to start your farm! \n");
   printf("Water Can +1! \nShovel +1! \nHoe +1! \n"); 
-  printf("These tools aren't going to stay forever, they will eventually break.\n");
-  printf("When they do you'll have the option to go into town and buy new ones from the merchant or take it to the blacksmith. \n \n \n");
-  
-  // Uses for the tools 
-  shovel = 25; 
-  hoe = 25; 
-  waterCan =25; 
   
   printf("Oh? You stepped on something...? \n"); 
   printf("You pick up a strange bottle, it has a strange label on it...? \n");
