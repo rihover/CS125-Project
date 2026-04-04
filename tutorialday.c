@@ -8,6 +8,7 @@
             1.4 3/24/26 (Added plant seeds function) 
             1.5 3/31/26 (Farm Ascii prints)
             1.6 4/1/26 (wildflower ascii and milo ascii)
+            1.7 4/4/26 (Debugging added pointers for the seeds)
 ****************************************************/
 #include <stdio.h> 
 #include <stdlib.h> 
@@ -175,7 +176,8 @@ int main()
   plantSeeds(&tomatoSeeds,&wildFlowerSeeds,&sugarCaneSeeds,&radishSeeds,&potatoSeeds);
   
   printf(BLUE); 
-  printf("We sucessfully got seeds planted! Let's make our way into town to meet some new frieds! \n"); 
+  printf("We sucessfully got seeds planted! Now let's harvest the Wild Flowers! \n"); 
+  printf("")
   
   return 0;
 }
