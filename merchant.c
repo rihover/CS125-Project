@@ -27,4 +27,8 @@ void merchant()
   {
     printf("Options to buy (Enter the corresponding number):\n1: Wild Flower Seeds (5 CAT coins) \n2: Tomato Seeds (10 CAT coins) \n3:Radish Seeds (15 CAT coins) \n4: Sugar Cane Seeds (20 CAT coins) \n5: Potato Seeds (10 CAT coins) \n")
     scanf("%d", &buyseeds);
-    if 
+    if (buyseeds == 1) 
+    {
+      if (CATcoins < 5)
+      {
+        
