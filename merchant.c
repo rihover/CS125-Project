@@ -4,19 +4,6 @@
 #define RESET "\033[0m"
 #define YELLOW "\033[33m"
 
-int luna_art()
-{
-  char luna[400];
-  int i;
-  FILE* f=fopen("luna.txt","r");
-  for (i=0; i<=6; i++)
-  {
-    fgets(luna, 400, f);
-    printf("%s", luna);
-  }
-return 0;
-}
-
 void merchant(int *CATcoins,
               int *tomatoSeeds, int *wildFlowerSeeds, int *sugarCaneSeeds,
               int *radishSeeds, int *potatoSeeds,
@@ -29,7 +16,7 @@ void merchant(int *CATcoins,
     char continuesell = 'y';
     char sell;
     
-    luna_art();
+  
     printf(YELLOW);
     printf("Welcome to Luna's Emporium!\n");
     printf("You have %d CAT coins.\n", *CATcoins);
